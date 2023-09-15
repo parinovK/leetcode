@@ -46,3 +46,22 @@ int main()
 		cout << "digits is not found.";
 	}
 }
+
+/*
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+	 vector<int> index;
+	for (int i = 0; i < nums.size(); i++) {
+	for (int j = 0; j < nums.size(); j++) {
+		if (nums[i] + nums[j] == target && i!=j) {
+		index.push_back(j);
+		index.push_back(i);
+		return index;
+		}
+	}
+	}
+	throw invalid_argument("sum not found");
+	}
+};
+*/
