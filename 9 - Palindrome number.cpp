@@ -1,4 +1,4 @@
-﻿// atn.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// atn.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -9,56 +9,48 @@
 using namespace std;
 
 bool isPalindrome(int x) {
+    bool check = false;
     if (x < 0) {
         return false;
     }
     stringstream test;
-    while (x % 10 != 0) {
+    while (x != 0) {
         test << x % 10;
         x /= 10;
     }
     string temp = test.str();
     reverse(temp.begin(), temp.end());
-    if (temp[0] == 0) {
-        return false;
-    }
     if (test.str() == temp) {
-        return true;
+        check = true;
     }
-    else {
-        return false;
-    }
+    return check;
 }
 
 int main()
 {
-    cout << isPalindrome(121);
+    int digit;
+    cin >> digit;
+    cout << isPalindrome(digit);
 }
 
 /*
-Решение для LeetCode:
 class Solution {
 public:
     bool isPalindrome(int x) {
+        bool check = false;
         if (x < 0) {
             return false;
         }
         stringstream test;
-        while (x % 10 != 0) {
+        while (x != 0) {
             test << x % 10;
             x /= 10;
         }
         string temp = test.str();
         reverse(temp.begin(), temp.end());
-        if (temp[0] == 0) {
-             return false;
-        }
         if (test.str() == temp) {
-            return true;
+            check = true;
         }
-        else {
-            return false;
-        }
+        return check;
     }
-};
-*/
+};*/
